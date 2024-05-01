@@ -1,0 +1,37 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+<div asp-validation-summary="All" class="text-danger"></div>
+<div class="main-agileinfo">
+	<div class="agileits-top">
+		<form asp-action="Register">
+			<input class="text" asp-for="FName" placeholder="First Name" required="" >
+			<br />
+			<input class="text" asp-for="LName" placeholder="Last Name" required="">
+			<br />
+			<input class="text email" asp-for="Email" placeholder="E-mail" required="">
+			<br />
+			<input class="text" asp-for="Password" placeholder="Password" required="">
+			<br />
+			<input class="text" asp-for="ConfirmPassword" placeholder="Confirm Password" required="">
+			<br />
+	
+			<div class="wthree-text">
+				<label class="anim">
+					<input asp-for="IsAgree" class="checkbox" >
+					<span>I Agree To The Terms & Conditions</span>
+				</label>
+				<div class="clear"> </div>
+			</div>
+			<input type="submit" value="SIGNUP">
+		</form>
+		<p>Do You  have an Account? <a asp-action="Login"> Login Now!</a></p>
+	</div>
+</div>
+@section ValidationScriptSection
+{
+	<partial name="_ValidationScriptsPartial"/>
+}
+
